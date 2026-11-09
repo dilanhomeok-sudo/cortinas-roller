@@ -1,0 +1,17 @@
+{
+  "nota": "Puntos de control relevados el 2026-11-08 en https://app.solsticiocortinas.com/home/cotizar. 'costo' es el 'tu costo' que muestra el cotizador del proveedor (ancho y alto en cm, caída trasera, cadena plástica, sin contrapeso).",
+  "puntos": [
+    {"tela": 4,   "nombre": "Blackout vinílico premium · Negro", "ancho": 100, "alto": 100, "costo": 40413},
+    {"tela": 4,   "nombre": "Blackout vinílico premium · Negro", "ancho": 160, "alto": 180, "costo": 72522},
+    {"tela": 4,   "nombre": "Blackout vinílico premium · Negro", "ancho": 137, "alto": 213, "costo": 69400},
+    {"tela": 4,   "nombre": "Blackout vinílico premium · Negro", "ancho": 61,  "alto": 95,  "costo": 28839},
+    {"tela": 99,  "nombre": "Sunscreen 5% poliéster · Negro", "ancho": 248, "alto": 141, "costo": 122295},
+    {"tela": 99,  "nombre": "Sunscreen 5% poliéster · Negro", "ancho": 86,  "alto": 262, "costo": 58129},
+    {"tela": 155, "nombre": "Filtro de luz tramado · Lima Beige", "ancho": 203, "alto": 177, "costo": 298894},
+    {"tela": 131, "nombre": "Sunscreen 5% fibra de vidrio · Natté 380 negro / bronce", "ancho": 172, "alto": 244, "costo": 495682},
+    {"tela": 284, "nombre": "Sunscreen 5% poliéster bicolor · Basic 5% blanco-negro", "ancho": 156, "alto": 152, "costo": 170886},
+    {"tela": 345, "nombre": "Filtro de luz liso · Lux Blanco", "ancho": 219, "alto": 211, "costo": 164706},
+    {"tela": 135, "nombre": "Sunscreen 4% poliéster · Abudhabi Lino / Chocolate", "ancho": 110, "alto": 157, "costo": 218814},
+    {"tela": 10,  "nombre": "Blackout vinílico eco · Blanco", "ancho": 64,  "alto": 238, "costo": 36937}
+  ]
+}
