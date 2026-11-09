@@ -304,8 +304,8 @@
       var msg = !medidasOk() ? 'Revisá las medidas' : t && costoTela(t) == null ? 'Esta tela no llega a ese ancho' : 'Elegí tu tela';
       box.appendChild(el('span', 'na', msg)); $('addBtn').disabled = true; return;
     }
-    var a = el('div', 'ef'); a.appendChild(el('small', '', 'Efectivo')); a.appendChild(el('b', '', money(p.ef)));
-    var b = el('div'); b.appendChild(el('small', '', 'Lista (cuotas)')); b.appendChild(el('b', '', money(p.lista)));
+    var a = el('div', 'ef'); a.appendChild(el('small', '', 'Efectivo (estimado)')); a.appendChild(el('b', '', money(p.ef)));
+    var b = el('div'); b.appendChild(el('small', '', 'Lista (cuotas, estimado)')); b.appendChild(el('b', '', money(p.lista)));
     box.appendChild(a); box.appendChild(b);
     $('addBtn').disabled = false;
   }
@@ -367,7 +367,7 @@
     });
     t += '\nTotal efectivo/transferencia: ' + money(tEf) + '\nTotal precio de lista (cuotas): ' + money(tLi);
     var n = $('cliente').value.trim(); if (n) t += '\n\nMi nombre: ' + n;
-    t += '\n\n(Presupuesto estimativo armado en el cotizador online)';
+    t += '\n\n(Precios estimativos/aproximados armados en el cotizador online; el presupuesto definitivo puede diferir.)';
     return t;
   }
 
