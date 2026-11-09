@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortinas roller a medida · Dilan Home</title>
+<meta name="description" content="Armá tu cortina roller a medida: cargá la medida de tu ventana, elegí la tela y mirá al instante cuánto sale. Cotizador online de Dilan Home.">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#FAF6EF">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Dilan Home">
+<meta property="og:title" content="Cortinas roller a medida · Dilan Home">
+<meta property="og:description" content="Cargá la medida de tu ventana, elegí la tela y mirá cuánto sale tu cortina roller.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="./" aria-label="Dilan Home, cortinas roller">
+      <svg class="mark" viewBox="0 0 80 90" aria-hidden="true"><path d="M6 5 L6 85 L34 85 A40 40 0 0 0 34 5 Z" fill="#C5D1B8"/><circle cx="36" cy="45" r="13" fill="#E9A98B"/></svg>
+      <span class="word">dilan home</span>
+      <span class="line-name">Cortinas roller</span>
+    </a>
+    <div class="top-r">
+      <a class="shop-link" href="https://www.dilan.com.ar/">Ir a la tienda</a>
+      <button class="cart-btn" id="openList" aria-label="Ver mi presupuesto">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>
+        <span>Mi presupuesto</span><i id="listCount">0</i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Armá tu cortina roller</h1>
+  <p>Cargá la medida de tu ventana, elegí la tela que más te guste y mirá al instante cuánto sale. Sin compromiso.</p>
+</section>
+
+<main class="wrap">
+  <!-- Vista previa -->
+  <aside class="stage" id="stage">
+    <div class="stage-in">
+      <div class="scene" id="scene" aria-label="Vista previa de tu cortina"></div>
+      <div class="stage-ctl">
+        <label class="drop"><span>Subir</span>
+          <input type="range" id="drop" min="12" max="100" value="100" aria-label="Subir o bajar la cortina">
+          <span>Bajar</span></label>
+        <div class="stage-name" id="stageName">Elegí una tela</div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="steps" id="steps">
+    <!-- 1. Medidas -->
+    <section class="card" id="s1">
+      <h2><b>1</b> ¿Qué medida tiene tu ventana?</h2>
+      <p class="hint">Medí el hueco donde va la cortina, en centímetros. Si va por fuera del marco, sumale unos cm de cada lado.</p>
+      <div class="row2">
+        <label class="fld"><span>Ancho <small>(cm)</small></span>
+          <div class="num"><input id="ancho" type="number" inputmode="numeric" min="30" max="360" step="1" value="150" aria-describedby="medMsg"><em>cm</em></div></label>
+        <label class="fld"><span>Alto <small>(cm)</small></span>
+          <div class="num"><input id="alto" type="number" inputmode="numeric" min="40" max="300" step="1" value="180" aria-describedby="medMsg"><em>cm</em></div></label>
+      </div>
+      <p class="msg" id="medMsg" role="status"></p>
+      <details class="how">
+        <summary>¿Cómo medir mi ventana?</summary>
+        <ul>
+          <li><b>Ancho:</b> medí de lado a lado en tres puntos (arriba, al medio y abajo) y usá la medida más chica si va dentro del marco.</li>
+          <li><b>Alto:</b> medí desde donde va a ir colocada la cortina hasta donde querés que llegue. Si va por fuera, sumale unos cm.</li>
+          <li>Si dudás, cargá la medida aproximada y te la confirmamos por WhatsApp antes de avanzar.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 2. Tela -->
+    <section class="card" id="s2">
+      <h2><b>2</b> ¿Qué tela querés?</h2>
+      <div class="types" id="types" role="tablist" aria-label="Tipo de tela"></div>
+      <p class="hint" id="typeHint"></p>
+      <div class="bar">
+        <input id="q" type="search" placeholder="Buscar por nombre o color (ej: gris, lino, negro)" aria-label="Buscar tela">
+      </div>
+      <div class="chips" id="colorChips" aria-label="Filtrar por color"></div>
+      <div id="telas"></div>
+    </section>
+
+    <!-- 3. Opciones -->
+    <section class="card" id="s3">
+      <h2><b>3</b> Detalles de tu cortina</h2>
+      <div class="opt">
+        <div class="opt-t">Lado de la cadena <small>visto desde adentro del ambiente</small></div>
+        <div class="seg" data-opt="lado"><button type="button" data-v="izq">Izquierdo</button><button type="button" data-v="der" aria-pressed="true">Derecho</button></div>
+      </div>
+      <div class="opt">
+        <div class="opt-t">Caída <small>cómo baja la tela</small></div>
+        <div class="seg" data-opt="caida"><button type="button" data-v="del">Delantera</button><button type="button" data-v="tras" aria-pressed="true">Trasera</button></div>
+        <p class="hint sm" id="caidaHint"></p>
+      </div>
+      <div class="opt">
+        <div class="opt-t">Cadena</div>
+        <div class="seg" data-opt="cadena"><button type="button" data-v="plas" aria-pressed="true">Plástica</button><button type="button" data-v="met">Metálica <i class="plus" id="plusMet"></i></button></div>
+      </div>
+      <div class="opt">
+        <div class="opt-t">Contrapeso <small>barra que ayuda a que la tela baje tensa</small></div>
+        <div class="seg" data-opt="contra"><button type="button" data-v="no" aria-pressed="true">No</button><button type="button" data-v="si">Sí <i class="plus" id="plusCon"></i></button></div>
+      </div>
+      <label class="fld"><span>Nombre del ambiente <small>(opcional)</small></span><input id="nombre" type="text" maxlength="40" placeholder="Ej: Living, dormitorio de Sofi"></label>
+    </section>
+  </div>
+</main>
+
+<!-- Barra de precio fija -->
+<div class="pricebar" id="pricebar">
+  <div class="pb-in">
+    <div class="pb-info">
+      <div class="pb-tela" id="pbTela">Elegí una tela</div>
+      <div class="pb-prices" id="pbPrices"></div>
+    </div>
+    <button class="primary" id="addBtn" disabled>Agregar<span class="lg"> a mi presupuesto</span></button>
+  </div>
+</div>
+
+<!-- Panel presupuesto -->
+<div class="overlay side" id="panel" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="panelT">
+    <button class="x" id="closePanel" aria-label="Cerrar">&times;</button>
+    <h2 id="panelT">Mi presupuesto</h2>
+    <div id="items"></div>
+    <div class="totals" id="totals"></div>
+    <label class="fld"><span>Tu nombre <small>(opcional)</small></span><input id="cliente" type="text" maxlength="60" placeholder="Para identificar tu consulta"></label>
+    <button class="wa" id="waBtn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg> Pedir por WhatsApp</button>
+    <button class="ghost" id="clearBtn">Vaciar presupuesto</button>
+    <p class="fine">Los precios son estimativos. Confirmamos medidas, disponibilidad y plazo de entrega con vos antes de avanzar.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-brand"><svg class="mark" viewBox="0 0 80 90" aria-hidden="true"><path d="M6 5 L6 85 L34 85 A40 40 0 0 0 34 5 Z" fill="#C5D1B8"/><circle cx="36" cy="45" r="13" fill="#E9A98B"/></svg> <span class="word">dilan home</span></div>
+  <p>Cortinas roller confeccionadas a medida. Los precios son estimativos y pueden cambiar sin previo aviso; el precio final se confirma al tomar el pedido.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="data/telas.js"></script>
+<script src="data/precios.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
